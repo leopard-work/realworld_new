@@ -51,17 +51,11 @@ const Home = props => {
         <div className="container page">
           <div className="row">
             <MainView />
-
-            <div className="col-md-3">
-              <div className="sidebar">
-
-                <p>Popular Tags</p>
-
-                <Tags
-                    tags={props.tags}
-                    onClickTag={props.onClickTag} />
-
-              </div>
+            <div className="sidebar">
+              <p>Популярные теги</p>
+              <Tags
+                  tags={props.tags}
+                  onClickTag={props.onClickTag} />
             </div>
           </div>
         </div>

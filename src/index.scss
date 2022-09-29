@@ -2,6 +2,11 @@
 @import 'reset-css';
 @import './global.scss';
 
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   background-color: $color_black1;
   color: $main_color;
@@ -13,6 +18,10 @@ body {
 .container {
   width: 1140px;
   margin: auto auto;
+  &.page {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 a {
   text-decoration: none;
@@ -40,6 +49,27 @@ h3 {
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin: 32px 0 32px -32px;
+}
+.sidebar {
+  width: 308px;
+  margin-left: 32px;
+  background: $color_black2;
+  border-radius: 20px;
+  padding: 16px;
+}
+.content {
+  width: calc(100% - 372px);
+  margin-left: 32px;
 }
 
 
