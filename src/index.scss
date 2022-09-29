@@ -4,8 +4,11 @@
 
 body {
   background-color: $color_black1;
-  color: #ffffff;
+  color: $main_color;
   font-family: $font1;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }
 .container {
   width: 1140px;
@@ -20,6 +23,24 @@ svg path {
   transition: $anim1;
 }
 
+h1 {
+  font-family: $font2;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 64px;
+}
+h2 {
+  font-family: $font2;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+}
+h3 {
+  font-family: $font2;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
 
 
 

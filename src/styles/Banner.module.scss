@@ -1,0 +1,11 @@
+@import '../global.scss';
+
+.banner {
+  border-bottom: solid 1px $color_gray2;
+  padding: 32px 0px;
+  text-align: center;
+  h1 {
+    text-shadow: 0px 0px 16px rgba(51, 51, 255, 0.25), 0px 0px 8px rgba(51, 51, 255, 0.25), 0px 4px 32px rgba(51, 51, 255, 0.5);
+    margin-bottom: 4px;
+  }
+}

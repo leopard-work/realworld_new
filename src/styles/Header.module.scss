@@ -49,10 +49,10 @@
         margin-right: 5px;
     }
     &:hover, &.active {
-        color: #ffffff;
+        color: $main_color;
         &:not(.avatar) {
             svg path {
-                stroke: #ffffff;
+                stroke: $main_color;
             }
         }
     }
