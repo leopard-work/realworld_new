@@ -1,0 +1,21 @@
+/*@import-normalize;*/
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,700;1,700&family=JetBrains+Mono:ital@0;1&display=swap');
+
+$font1: 'JetBrains Mono', monospace;
+$font2: 'Exo 2', sans-serif;
+$color_black1: #131316;
+
+
+body {
+  /*background-color: $color_black1;
+  color: #ffffff;*/
+  font-family: $font1;
+}
+.container {
+  width: 1140px;
+  margin: auto auto;
+}
+
+
+
+
