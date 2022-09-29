@@ -1,0 +1,22 @@
+@import '../global.scss';
+
+.tags {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+}
+.tag {
+  padding: 4px 8px;
+  background-color: $color_gray2;
+  border-radius: 100px;
+  margin-left: 4px;
+  margin-top: 4px;
+  font-size: 12px;
+  &:hover {
+    background-color: $color_blue1;
+  }
+}
