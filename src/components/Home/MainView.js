@@ -4,6 +4,8 @@ import agent from '../../agent';
 import { connect } from 'react-redux';
 import { CHANGE_TAB } from '../../constants/actionTypes';
 
+import styles from '../../styles/Home.module.scss';
+
 const YourFeedTab = props => {
   if (props.token) {
     const clickHandler = ev => {
@@ -12,13 +14,11 @@ const YourFeedTab = props => {
     }
 
     return (
-      <li className="nav-item">
-        <a  href=""
-            className={ props.tab === 'feed' ? 'nav-link active' : 'nav-link' }
+        <a href="/"
+            className={ props.tab === 'feed' ? styles.active : '' }
             onClick={clickHandler}>
           Ваша лента
         </a>
-      </li>
     );
   }
   return null;
@@ -30,14 +30,12 @@ const GlobalFeedTab = props => {
     props.onTabClick('all', agent.Articles.all, agent.Articles.all());
   };
   return (
-    <li className="nav-item">
       <a
-        href=""
-        className={ props.tab === 'all' ? 'nav-link active' : 'nav-link' }
+        href="/"
+        className={ props.tab === 'all' ? styles.active : '' }
         onClick={clickHandler}>
-        Вся лента
+        Лента
       </a>
-    </li>
   );
 };
 
@@ -47,11 +45,9 @@ const TagFilterTab = props => {
   }
 
   return (
-    <li className="nav-item">
-      <a href="" className="nav-link active">
+      <a href="/" className={styles.active}>
         <i className="ion-pound"></i> {props.tag}
       </a>
-    </li>
   );
 };
 
@@ -68,27 +64,25 @@ const mapDispatchToProps = dispatch => ({
 const MainView = props => {
   return (
     <div className="content">
-      <div className="feed-toggle">
-        <ul className="nav nav-pills outline-active">
+      <div className={styles.feed_nav}>
 
           <YourFeedTab
-            token={props.token}
-            tab={props.tab}
-            onTabClick={props.onTabClick} />
+              token={props.token}
+              tab={props.tab}
+              onTabClick={props.onTabClick} />
 
           <GlobalFeedTab tab={props.tab} onTabClick={props.onTabClick} />
 
           <TagFilterTab tag={props.tag} />
 
-        </ul>
       </div>
 
       <ArticleList
-        pager={props.pager}
-        articles={props.articles}
-        loading={props.loading}
-        articlesCount={props.articlesCount}
-        currentPage={props.currentPage} />
+          pager={props.pager}
+          articles={props.articles}
+          loading={props.loading}
+          articlesCount={props.articlesCount}
+          currentPage={props.currentPage} />
     </div>
   );
 };
