@@ -18,7 +18,7 @@ import {
 } from '../constants/actionTypes';
 
 const defaultState = {
-  appName: 'Новое приложение',
+  appName: 'Проектная кухня',
   token: null,
   viewChangeCounter: 0
 };

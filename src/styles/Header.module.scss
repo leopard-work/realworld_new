@@ -1,0 +1,59 @@
+@import '../global.scss';
+
+.header {
+    background: $color_black2;
+}
+.blocks {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+.logo {
+    text-shadow: 0px 0px 16px rgba(51, 51, 255, 0.25), 0px 0px 8px rgba(51, 51, 255, 0.25), 0px 4px 32px rgba(51, 51, 255, 0.5);
+    color: #F2F2F3;
+    font-family: $font2;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+.nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+}
+.nav_item {
+
+}
+.nav_link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    padding: 8px 16px;
+    color: $color_gray1;
+    &:not(.avatar) {
+        svg path {
+            stroke: $color_gray1;
+        }
+    }
+    span {
+        margin-right: 5px;
+    }
+    &:hover, &.active {
+        color: #ffffff;
+        &:not(.avatar) {
+            svg path {
+                stroke: #ffffff;
+            }
+        }
+    }
+}

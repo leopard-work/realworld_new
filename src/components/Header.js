@@ -1,32 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Icons, Avatar } from "./Library";
 
-import styles from '../styles/Header.module.css';
+import styles from '../styles/Header.module.scss';
 
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
-      <ul className="nav navbar-nav pull-xs-right">
+        <>
+            <li className={styles.nav_item}>
+              <Link to="/" className={styles.nav_link}>
+                  <span><Icons type="home" /></span>
+                  Главная
+              </Link>
+            </li>
 
-        <li className="nav-item">
-          <Link to="/" className="nav-link">
-            Главная
-          </Link>
-        </li>
-
-        <li className="nav-item">
-          <Link to="/login" className="nav-link">
-            Регистрация
-          </Link>
-        </li>
-
-        <li className="nav-item">
-          <Link to="/register" className="nav-link">
-            Авторихация
-          </Link>
-        </li>
-
-      </ul>
+            <li className={styles.nav_item}>
+                <Link to="/login" className={styles.nav_link}>
+                    <span><Icons type="login" /></span>
+                    Войти
+                </Link>
+            </li>
+        </>
     );
   }
   return null;
@@ -35,36 +30,32 @@ const LoggedOutView = props => {
 const LoggedInView = props => {
   if (props.currentUser) {
     return (
-      <ul className="nav navbar-nav pull-xs-right">
-
-        <li className="nav-item">
-          <Link to="/" className="nav-link">
-              Главная
-          </Link>
-        </li>
-
-        <li className="nav-item">
-          <Link to="/editor" className="nav-link">
-            <i className="ion-compose"></i>&nbsp;Добавить пост
-          </Link>
-        </li>
-
-        <li className="nav-item">
-          <Link to="/settings" className="nav-link">
-            <i className="ion-gear-a"></i>&nbsp;Настройки
-          </Link>
-        </li>
-
-        <li className="nav-item">
-          <Link
-            to={`/@${props.currentUser.username}`}
-            className="nav-link">
-            <img src={props.currentUser.image} className="user-pic" alt={props.currentUser.username} />
-            {props.currentUser.username}
-          </Link>
-        </li>
-
-      </ul>
+        <>
+            <li className={styles.nav_item}>
+                <Link to="/" className={styles.nav_link}>
+                    <span><Icons type="home" /></span>
+                    Главная
+                </Link>
+            </li>
+            <li className={styles.nav_item}>
+                <Link to="/editor" className={styles.nav_link}>
+                    <span><Icons type="add" /></span>
+                    Добавить пост
+                </Link>
+            </li>
+            <li className={styles.nav_item}>
+                <Link to="/settings" className={styles.nav_link}>
+                    <span><Icons type="settings" /></span>
+                    Настройки
+                </Link>
+            </li>
+            <li className={styles.nav_item}>
+                <Link to={`/@${props.currentUser.username}`} className={`${styles.nav_link} ${styles.avatar}`}>
+                    <span><Avatar type="avatar1" /></span>
+                    {props.currentUser.username}
+                </Link>
+            </li>
+        </>
     );
   }
 
@@ -74,16 +65,17 @@ const LoggedInView = props => {
 
 const Header = (props) => {
     return (
-        <nav className={styles.nav}>
+        <nav className={styles.header}>
             <div className="container">
-
-                <Link to="/" className="navbar-brand">
-                    {props.appName.toLowerCase()}
-                </Link>
-
-                <LoggedOutView currentUser={props.currentUser} />
-
-                <LoggedInView currentUser={props.currentUser} />
+                <div className={styles.blocks}>
+                    <Link to="/" className={styles.logo}>
+                        {props.appName}
+                    </Link>
+                    <ul className={styles.nav}>
+                        <LoggedOutView currentUser={props.currentUser} />
+                        <LoggedInView currentUser={props.currentUser} />
+                    </ul>
+                </div>
             </div>
         </nav>
     );
