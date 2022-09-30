@@ -4,6 +4,7 @@ import styles from '../../styles/Tags.module.scss';
 
 const Tags = props => {
   const tags = props.tags;
+
   if (tags) {
     return (
       <div className={styles.tags}>
@@ -16,7 +17,7 @@ const Tags = props => {
 
             return (
               <a
-                href=""
+                href="/"
                 className={styles.tag}
                 key={tag}
                 onClick={handleClick}>
